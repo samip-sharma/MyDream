@@ -1,0 +1,10 @@
+{
+	"name": "MayaPirati",
+	"displayName": "MayaPirati",
+	"expo": {
+		"name": "MayaPirati",
+		"slug": "MayaPirati",
+		"version": "1.0.0",
+		"assetBundlePatterns": ["**/*"]
+	}
+}

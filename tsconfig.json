@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "_assets/*": [
+        "src/assets/*"
+      ],
+      "_components": [
+        "src/components"
+      ],
+      "_components/*": [
+        "src/components/*"
+      ],
+      "_context": [
+        "src/context"
+      ],
+      "_styles": [
+        "src/styles"
+      ],
+      "_screens": [
+        "src/screens"
+      ],
+      "_shapes": [
+        "src/shapes"
+      ],
+      "_env-variables": [
+        "src/env-variables"
+      ],
+      "_utils": [
+        "src/utils"
+      ],
+      "_adapters": [
+        "src/adapters"
+      ],
+      "_adapters/*": [
+        "src/adapters/*"
+      ],
+      "Navigation": [
+        "src/Navigation"
+      ],
+      "_types": [
+        "src/types"
+      ],
+      "_hooks": [
+        "src/hooks"
+      ]
+    }
+  },
+  "extends": "expo/tsconfig.base"
+}
