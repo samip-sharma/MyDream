@@ -1,18 +1,12 @@
 import "react-native-gesture-handler";
 import * as React from "react";
-import {
-  NavigationContainer,
-  NavigationContainerRef,
-} from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Home } from "_screens";
 import { Login } from "_screens";
 import { Header } from "_components";
 import * as types from "_types";
-import Discussion from "../screens/Discussion";
-import Rental from "../screens/Rental";
-import Jobs from "../screens/Jobs";
-import Events from "../screens/Events";
+import DashBoard from "../screens/DashBoard";
+import Tutor from "../screens/Tutor";
 import DiscussionPost from "../screens/DiscussionPost";
 import Register from "../screens/Register";
 import Notification from "../screens/Notification";
@@ -29,7 +23,7 @@ const BottomTabNavigation = () => {
   return (
     <>
       <Tab.Navigator
-        initialRouteName="Jobs"
+        initialRouteName="DashBoard"
         screenOptions={({ route }) => ({
           headerShown: true,
           header: () => <Header />,
@@ -37,7 +31,7 @@ const BottomTabNavigation = () => {
             let iconName: keyof typeof MaterialIcons.glyphMap;
 
             switch (route.name) {
-              case "Jobs":
+              case "DashBoard":
                 iconName = "work-outline";
                 break;
               default:
@@ -52,8 +46,8 @@ const BottomTabNavigation = () => {
           tabBarInactiveTintColor: "gray",
         })}
       >
-        <Tab.Screen name="Jobs" component={Jobs} />
-        <Tab.Screen name="Events" component={Events} />
+        <Tab.Screen name="DashBoard" component={DashBoard} />
+        <Tab.Screen name="Tutor" component={Tutor} />
         <Tab.Screen
           name="DiscussionScreen"
           component={DiscussionStackNavigation}
@@ -68,9 +62,12 @@ const StackNavigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Welcome"
-      screenOptions={{
+      screenOptions={({ route }) => ({
         headerShown: false,
-      }}
+        header: () => <Header />,
+        tabBarActiveTintColor: "tomato",
+        tabBarInactiveTintColor: "gray",
+      })}
     >
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Welcome" component={Welcome} />
@@ -78,7 +75,11 @@ const StackNavigation = () => {
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="DiscussionPost" component={DiscussionPost} />
       <Stack.Screen name="Notification" component={Notification} />
-      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen
+        name="Profile"
+        options={{ headerShown: true }}
+        component={Profile}
+      />
     </Stack.Navigator>
   );
 };

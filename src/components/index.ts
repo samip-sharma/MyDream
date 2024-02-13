@@ -8,3 +8,4 @@ export { default as LocationChangerForm } from "./LocationChangerForm";
 export { default as BottomSheet } from "./BottomSheet";
 
 export { default as Picker } from "./Picker";
+export { default as FlexImage } from "./FlexImage";
